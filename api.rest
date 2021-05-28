@@ -1,0 +1,39 @@
+GET http://localhost:3000/api/v1/building
+###
+POST http://localhost:3000/api/v1/building
+Content-Type: application/json
+
+{
+    "uniqueName": "S",
+    "name": "Eek",
+    "desc": "Fakultas Gatau dibangun dengan cinta",
+    "lat": -7.506043,
+    "long": 109.075735,
+    "imgurl": "imguurl"
+}
+###
+PATCH http://localhost:3000/api/v1/building/6056e33718c5d237589b9e94
+Content-Type: application/json
+
+{
+    "uniqueName": "J",
+    "name": "Fakultas Psikologi",
+    "desc": "Fakultas psikologi dibangun dengan cinta",
+    "lat": -7.5060405,
+    "long": 109.0756662,
+    "imgurl": "imguurl"
+    
+}
+###
+DELETE http://localhost:3000/api/v1/building/60606703bbf29469186dccfe
+Content-Type: application/json
+
+{
+    "uniqueName": "J",
+    "name": "Fakultas Psikologi",
+    "desc": "Fakultas psikologi dibangun dengan cinta",
+    "lat": -7.03283,
+    "long": 109.32424,
+    "imgurl": "imguurl"
+    
+}
