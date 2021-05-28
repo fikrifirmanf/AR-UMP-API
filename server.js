@@ -6,7 +6,7 @@ const path = require('path')
 const app = express()
 const ApiRouter = require('./routes/router')
 require('dotenv').config()
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 5678
 app.use(cors())
 app.use(helmet())
 app.use(express.static(__dirname+'/404'))
