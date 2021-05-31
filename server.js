@@ -2,11 +2,13 @@ const express = require('express')
 const cors = require('cors')
 const helmet = require('helmet')
 const mongoose = require('mongoose')
+const jwt = require("jsonwebtoken");
 const path = require('path')
 const app = express()
 const ApiRouter = require('./routes/router')
+const authRouter = require("./routes/auth");
 require('dotenv').config()
-const PORT = process.env.PORT || 5678
+const PORT = process.env.PORT || 3000
 app.use(cors())
 app.use(helmet())
 app.use(express.static(__dirname+'/404'))
@@ -18,10 +20,31 @@ mongoose.connect(process.env.DB_URI,{useNewUrlParser: true,  useUnifiedTopology:
     console.log(err)
 })
 
+
+app.use("/auth/", authRouter);
 app.use('/api/v1',ApiRouter)
 app.get("*",(req,res)=>{
     res.status(404).sendFile(path.join(__dirname+'/404/index.html'))
 })
+
+function validateUser(req, res, next) {
+    jwt.verify(
+        req.headers["x-access-token"],
+        process.env.JWT_SECRET_KEY,
+        function (err, decoded) {
+            if (err) {
+                res.status(401).json({
+                    status: "unauthorization",
+                    message: err.message,
+                });
+            } else {
+                // add user id to request
+                req.body.userId = decoded.id;
+                next();
+            }
+        }
+    );
+}
 
 app.listen(PORT, ()=>{
     console.log(`Running on port ${PORT}`)

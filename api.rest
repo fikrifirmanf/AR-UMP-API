@@ -37,3 +37,18 @@ Content-Type: application/json
     "imgurl": "imguurl"
     
 }
+###
+POST http://localhost:3000/api/v1/users
+Content-Type: application/json
+# x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmMzdkNWMxZGE1MDgwMzYwODM1ZDJiZiIsImlhdCI6MTU5OTQ1MjYwNCwiZXhwIjoxNTk5NDU5ODA0fQ.KxWPrAZc11drgjvK3FuLnWFn7quBlTt7qRN3BA8wFf4
+
+{
+    "name": "ARUMP",
+    "username": "arump",
+    "password": "arump123321",
+    "email": "arump@admin.id",
+    "mobileNum": "088324283238",
+    "address": "Wangon",
+    "userType": "client"
+   
+}
