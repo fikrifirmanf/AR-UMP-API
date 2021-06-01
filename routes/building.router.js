@@ -4,6 +4,7 @@ const BuildingController = require('../controllers/builidng.controller')
 
 router.get('/',BuildingController.getAll);
 router.get('/:id',BuildingController.getById);
+router.get('/type/:id',BuildingController.getByType);
 router.post('/',BuildingController.create);
 router.patch('/:id',BuildingController.update);
 router.delete('/:id',BuildingController.delete);

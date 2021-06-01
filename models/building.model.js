@@ -25,6 +25,9 @@ const BuildingSchema = new mongoose.Schema({
         type: String,
         
     },
+    typeBuilding: {
+        type: String
+    },
     createdAt: {
         type: Date,
         default: Date.now

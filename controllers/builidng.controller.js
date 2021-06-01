@@ -40,6 +40,27 @@ module.exports = {
             })
         }
     },
+    getByType: async (req, res) => {
+        try {
+            const data = await BuildingModel.find({
+                typeBuilding: req.params.id
+            })
+            if (data.length > 0) {
+                res.json({
+                    status: res.statusCode,
+                    data: data
+                })
+            } else {
+                res.json({
+                    message: "No data available"
+                })
+            }
+        } catch (error) {
+            res.status(500).json({
+                message: error
+            })
+        }
+    },
     create: async (req, res) => {
         const body = new BuildingModel({
             uniqueName: req.body.uniqueName,
@@ -47,6 +68,7 @@ module.exports = {
             desc: req.body.desc,
             lat: req.body.lat,
             long: req.body.long,
+            typeBuilding: req.body.typeBuilding,
             imgurl: req.body.imgurl,
         })
         console.log(body)
@@ -72,6 +94,7 @@ module.exports = {
             desc: req.body.desc == null ? dataBuilding.desc : req.body.desc,
             lat: req.body.lat == null ? dataBuilding.lat : req.body.lat,
             long: req.body.long == null ? dataBuilding.long : req.body.long,
+            typeBuilding: req.body.typeBuilding == null ? dataBuilding.typeBuilding : req.body.typeBuilding,
             imgurl: req.body.imgurl == null ? dataBuilding.imgurl : req.body.imgurl,
         }
 
