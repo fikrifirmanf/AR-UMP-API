@@ -1,15 +1,19 @@
+###
+GET http://localhost:3000/api/v1/building/type/lain
+###
 GET http://localhost:3000/api/v1/building
 ###
 POST http://localhost:3000/api/v1/building
 Content-Type: application/json
 
 {
-    "uniqueName": "S",
-    "name": "Eek",
-    "desc": "Fakultas Gatau dibangun dengan cinta",
-    "lat": -7.506043,
-    "long": 109.075735,
-    "imgurl": "imguurl"
+    "uniqueName": "A",
+    "name": "Gedung Rektorata",
+    "desc": "Gedung rektorat UMP",
+    "lat": -7.412207679837826,
+    "long": 109.27170037031276,
+    "imgurl": "imguurl",
+    "typeBuilding": "lain"
 }
 ###
 PATCH http://localhost:3000/api/v1/building/6056e33718c5d237589b9e94
@@ -19,13 +23,14 @@ Content-Type: application/json
     "uniqueName": "J",
     "name": "Fakultas Psikologi",
     "desc": "Fakultas psikologi dibangun dengan cinta",
-    "lat": -7.5060405,
-    "long": 109.0756662,
-    "imgurl": "imguurl"
+    "lat": -7.413014350636122,
+    "long": 109.27297376316133,
+    "imgurl": "imguurl",
+    "typeBuilding": "fakultas"
     
 }
 ###
-DELETE http://localhost:3000/api/v1/building/60606703bbf29469186dccfe
+DELETE http://localhost:3000/api/v1/building/60b456f2ebc22043bc321fd9
 Content-Type: application/json
 
 {
