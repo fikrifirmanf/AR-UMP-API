@@ -1,6 +1,8 @@
 ###
 GET http://localhost:3000/api/v1/building/type/lain
 ###
+GET http://localhost:5678/api/v1/building/60b638a5ad89e441293f1943
+###
 GET http://localhost:3000/api/v1/building
 ###
 POST http://localhost:3000/api/v1/building

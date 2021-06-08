@@ -24,13 +24,14 @@ module.exports = {
     getById: async (req, res) => {
         try {
             const data = await BuildingModel.findById(req.params.id)
-            if (data.length > 0) {
+            if (data.length == null) {
                 res.json({
                     status: res.statusCode,
                     data: data
                 })
             } else {
                 res.json({
+                    
                     message: "No data available"
                 })
             }
