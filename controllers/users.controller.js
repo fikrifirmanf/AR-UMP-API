@@ -109,7 +109,7 @@ module.exports = {
             name: req.body.name,
             username: req.body.username,
             password: req.body.password,
-            userType: req.body.userType,
+            userType: "admin",
         });
         try {
             const newUser = await user.save();
@@ -128,7 +128,7 @@ module.exports = {
             name: req.body.name,
             username: req.body.username,
             password: bcrypt.hashSync(req.body.password, 10),
-            userType: req.body.userType,
+            userType: "admin",
         }
         try {
             await userModel.findByIdAndUpdate(req.params.id, user)
