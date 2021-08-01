@@ -4,6 +4,11 @@ const BuildingSchema = new mongoose.Schema({
     uniqueName: {
         type: String,
         required: true,
+        
+    },
+    name : {
+        type: String,
+        required: true,
         validate: {
             isAsync: true,
             validator: function (value, isValid) {
@@ -27,10 +32,6 @@ const BuildingSchema = new mongoose.Schema({
             },
             message: 'Gedung sudah ada'
         },
-    },
-    name : {
-        type: String,
-        required: true
     },
     desc: {
         type: String,
