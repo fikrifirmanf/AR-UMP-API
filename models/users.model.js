@@ -39,16 +39,7 @@ const userSchema = new mongoose.Schema({
         select: false,
         required: true,
     },
-    email: {
-        type: String,
-    },
-    mobileNum: {
-        type: String,
-        required: true,
-    },
-    address: {
-        type: String,
-    },
+    
     userType: {
         type: String,
         required: true,

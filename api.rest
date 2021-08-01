@@ -10,11 +10,13 @@ Content-Type: application/json
 
 {
     "uniqueName": "A",
-    "name": "Gedung Rektorata",
-    "desc": "Gedung rektorat UMP",
+    "name": "Ahmad Dahlan",
+    "desc": "Rektorat, kantor pusat administrasi",
     "lat": -7.412207679837826,
     "long": 109.27170037031276,
     "imgurl": "imguurl",
+    "wakeUpArea": 3087.91,
+    "dateBuild": "19/10/2001",
     "typeBuilding": "lain"
 }
 ###

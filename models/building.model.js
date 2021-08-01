@@ -3,7 +3,30 @@ const mongoose = require('mongoose')
 const BuildingSchema = new mongoose.Schema({
     uniqueName: {
         type: String,
-        required: true
+        required: true,
+        validate: {
+            isAsync: true,
+            validator: function (value, isValid) {
+                const self = this;
+                return self.constructor.findOne({
+                        uniqueName: value
+                    })
+                    .exec(function (err, user) {
+                        if (err) {
+                            throw err;
+                        } else if (user) {
+                            if (self.id === user.id) { // if finding and saving then it's valid even for existing email
+                                return isValid(true);
+                            }
+                            return isValid(false);
+                        } else {
+                            return isValid(true);
+                        }
+
+                    })
+            },
+            message: 'Gedung sudah ada'
+        },
     },
     name : {
         type: String,
@@ -21,9 +44,14 @@ const BuildingSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
-    imgurl: {
-        type: String,
-        
+    imgurl : {
+        type: String
+    },
+    wakeUpArea: {
+        type: Number
+    },
+    dateBuild: {
+        type: String
     },
     typeBuilding: {
         type: String

@@ -109,9 +109,6 @@ module.exports = {
             name: req.body.name,
             username: req.body.username,
             password: req.body.password,
-            email: req.body.email,
-            mobileNum: req.body.mobileNum,
-            address: req.body.address,
             userType: req.body.userType,
         });
         try {
@@ -131,9 +128,6 @@ module.exports = {
             name: req.body.name,
             username: req.body.username,
             password: bcrypt.hashSync(req.body.password, 10),
-            email: req.body.email,
-            mobileNum: req.body.mobileNum,
-            address: req.body.address,
             userType: req.body.userType,
         }
         try {

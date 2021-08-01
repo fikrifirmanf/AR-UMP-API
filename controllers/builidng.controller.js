@@ -71,6 +71,8 @@ module.exports = {
             long: req.body.long,
             typeBuilding: req.body.typeBuilding,
             imgurl: req.body.imgurl,
+            dateBuild: req.body.dateBuild,
+            wakeUpArea: req.body.wakeUpArea,
         })
         console.log(body)
         try {
@@ -97,6 +99,8 @@ module.exports = {
             long: req.body.long == null ? dataBuilding.long : req.body.long,
             typeBuilding: req.body.typeBuilding == null ? dataBuilding.typeBuilding : req.body.typeBuilding,
             imgurl: req.body.imgurl == null ? dataBuilding.imgurl : req.body.imgurl,
+            dateBuild: req.body.dateBuild == null ? dataBuilding.dateBuild : req.body.dateBuild,
+            wakeUpArea: req.body.wakeUpArea == null ? dataBuilding.wakeUpArea : req.body.wakeUpArea,
         }
 
         try {
