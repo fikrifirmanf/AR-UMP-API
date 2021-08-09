@@ -14,7 +14,7 @@ const BuildingSchema = new mongoose.Schema({
             validator: function (value, isValid) {
                 const self = this;
                 return self.constructor.findOne({
-                        uniqueName: value
+                        name: value
                     })
                     .exec(function (err, user) {
                         if (err) {
